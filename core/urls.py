@@ -22,6 +22,6 @@ urlpatterns = [
     path('', include('restapis.urls')),
     path('', include('employee.urls')),
     path('home/',index, name="index"),
-    path('about/', about, name="about"),
+    path('about-us/', about, name="about"),
     path('contact/', contact, name="contact")
 ]
