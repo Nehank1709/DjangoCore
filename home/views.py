@@ -10,3 +10,7 @@ def about(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def dynamic_url(request,id, name):
+    print(f"This is the value received from end point {id}")
+    return render(request, 'dynamic_url.html', context={'id':id, 'name':name})
