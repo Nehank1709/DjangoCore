@@ -21,7 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('restapis.urls')),
     path('', include('employee.urls')),
-    path('home/',HomeView.as_view(), name="index"),
+    # path('home/',HomeView.as_view(), name="index"),
+    path('home/',index, name="index"),
     path('about-us/', about, name="about"),
     path('contact/', contact, name="contact"),
     path('<int:id>/<name>/', dynamic_url, name="dynamic_url")

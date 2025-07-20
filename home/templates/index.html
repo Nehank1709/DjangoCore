@@ -8,6 +8,37 @@
 <body>
     <h1>This HTML page is returned by Django. :) 😊</h1>
     <p>Django is really nice. 🚀🚀</p>
+
+    <h2>Your Lucky number is - {{lucky_number}}</h2>
+    <hr>
+
+    <ol>
+        {% for vegetable in vegetables %}
+        <li>{{vegetable}}</li><hr>
+        {% endfor %}
+    </ol>
+
+    {% if person_age >= 18 %}
+    <h3>You Can Vote</h3>
+    {% else %}
+    <h3>You Cannot Vote</h3>
+    {% endif %}
+
+    <hr>
+
+    <h3>Cities Information</h3>
+    <p>Id | Name | Population | Country</p>
+    {% for city in cities %}
+    <p>{{forloop.counter}} | {{city.name}} | {{city.population}} | {{city.country}}
+        {% if city.country == "India" %}
+        🙏
+        {% elif city.country == "USA" %}
+        🏈
+        {% else %}
+        🌎
+        {% endif %}
+    </p>
+    {% endfor %}
     <a href="{%url 'contact' %}", target="_blank">Contact</a> | 
     <a href="{%url 'about' %}">About</a>
 </body>
