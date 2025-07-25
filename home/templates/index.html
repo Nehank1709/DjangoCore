@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block start %}
-
+<div class="container p-4">
 {% include "image.html" %}
 
     <h1>This HTML page is returned by Django. :) 😊</h1>
     <p>Django is really nice. 🚀🚀</p>
 
-    <h2>Your Lucky number is - {{lucky_number}}</h2>
+    <h2>Your Lucky number is - <button class="btn btn-danger">{{lucky_number}}</button></h2>
     <hr>
 
     <ol>
@@ -39,5 +39,6 @@
     {% endfor %}
     <a href="{%url 'contact' %}", target="_blank">Contact</a> | 
     <a href="{%url 'about' %}">About</a>
+</div>
 
 {% endblock %}
